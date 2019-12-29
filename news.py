@@ -1,6 +1,8 @@
+#Made for the sole purpose of GCI 2019
 from newsapi import NewsApiClient
 import time
-newsapi = NewsApiClient(api_key='6ccb142565e249ccb935e1ee6572e9e8')
+key=''
+newsapi = NewsApiClient(api_key=key')
 def getnews(query):
        all_articles = newsapi.get_everything(q=query,sort_by='publishedAt',page=1,language="en")
        all_articles=all_articles['articles']
