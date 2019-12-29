@@ -1,7 +1,7 @@
 #Made for the sole purpose of GCI 2019
 from newsapi import NewsApiClient
 import time
-key=''
+key=""
 newsapi = NewsApiClient(api_key=key')
 def getnews(query):
        all_articles = newsapi.get_everything(q=query,sort_by='publishedAt',page=1,language="en")
