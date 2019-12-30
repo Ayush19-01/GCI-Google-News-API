@@ -2,7 +2,7 @@
 from newsapi import NewsApiClient
 import time
 key=""
-newsapi = NewsApiClient(api_key=key')
+newsapi = NewsApiClient(api_key=key)
 def getnews(query):
        all_articles = newsapi.get_everything(q=query,sort_by='publishedAt',page=1,language="en")
        all_articles=all_articles['articles']
