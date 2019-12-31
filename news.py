@@ -1,8 +1,9 @@
+#Made for the sole purpose og GCI 2019
 from newsapi import NewsApiClient
 import time
 from tkinter import *
-apikey=''
-newsapi = NewsApiClient(api_key=apikey)
+import webbrowser
+newsapi = NewsApiClient(api_key='6ccb142565e249ccb935e1ee6572e9e8')
 def getnews(query):
     global gl1
     global root2
@@ -53,6 +54,7 @@ def news1():
     global label3
     global label4
     global label5
+    global tmplist
     l=len(gl1)
     tmplist=gl1[crsr]
     if crsr==l-1:
@@ -64,6 +66,7 @@ def news1():
         label4.place(x=41, y=160)
         label5 = Label(root1, text=tmplist[3], font=("roboto", 15), bg="#220047", fg="#CE9141")
         label5.place(x=41, y=200)
+        label5.bind("<Button-1>", call2)
         button1= Button(root1, text="Back", font=("roboto", 15), bg="#CE9141", fg="#220047",activeforeground="#CE9141",activebackground="#220047")
         button1.bind("<Button-1>", back1)
         button1.place(x=300, y=240)
@@ -76,6 +79,7 @@ def news1():
         label4.place(x=41, y=160)
         label5 = Label(root1, text=tmplist[3], font=("roboto", 15), bg="#220047", fg="#CE9141")
         label5.place(x=41, y=200)
+        label5.bind("<Button-1>", call2)
         button2= Button(root1, text="Next", font=("roboto", 15), bg="#CE9141", fg="#220047",activeforeground="#CE9141",activebackground="#220047")
         button2.bind("<Button-1>", next1)
         button2.place(x=400, y=240)
@@ -88,6 +92,7 @@ def news1():
         label4.place(x=41, y=160)
         label5 = Label(root1, text=tmplist[3], font=("roboto", 15), bg="#220047", fg="#CE9141")
         label5.place(x=41, y=200)
+        label5.bind("<Button-1>", call2)
         button1 = Button(root1, text="Back", font=("roboto", 15), bg="#CE9141", fg="#220047",activeforeground="#CE9141",activebackground="#220047")
         button1.bind("<Button-1>", back2)
         button1.place(x=300, y=240)
@@ -158,6 +163,9 @@ def back2(x):
     news1()
 def call1(event):
     quit()
+def call2(event):
+    global tmplist
+    webbrowser.open_new_tab(tmplist[3][4:])
 while True:
     gl1 = []
     crsr = 0
